@@ -4,3 +4,21 @@ body {
   line-height: 1.5;
   color: #2a2a2a;
 }
+
+#validation-input {
+  border: 3px solid #bdbdbd;
+}
+
+#validation-input.valid {
+  border-color: #4caf50;
+}
+
+#validation-input.invalid {
+  border-color: #f44336;
+}
+
+.Item {
+  list-style: none;
+  display: inline-flex;
+  margin-right: 50px;
+}
