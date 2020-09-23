@@ -15,12 +15,22 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+// --------------------------------- старое решение
+// images.forEach(image => {
+//   galeryEl.insertAdjacentHTML(
+//     'beforeend',
+//     `<li class="Item"><img src="${image.url}" alt= "${image.alt}" width="320" height="200"></li>`,
+//   );
+// });
 
 const galeryEl = document.querySelector('#gallery');
 
-images.forEach(image => {
-  galeryEl.insertAdjacentHTML(
-    'beforeend',
-    `<li class="Item"><img src="${image.url}" alt= "${image.alt}" width="320" height="200"></li>`,
-  );
-});
+galeryEl.insertAdjacentHTML(
+  'beforeend',
+  images
+    .map(
+      image =>
+        `<li class="Item"><img src="${image.url}" alt= "${image.alt}" width="320" height="200"></li>`,
+    )
+    .join(''),
+);
